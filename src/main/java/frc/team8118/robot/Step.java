@@ -1,4 +1,4 @@
-package frc.team6434.robot;
+package frc.team8118.robot;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -42,7 +42,6 @@ class Straight extends Step
         return false;
     }
 }
-
 
 //step for turning
 class Turn extends Step

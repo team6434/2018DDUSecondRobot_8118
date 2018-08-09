@@ -1,4 +1,4 @@
-package frc.team6434.robot;
+package frc.team8118.robot;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -13,8 +13,6 @@ public class Intake {
     DoubleSolenoid ruby;
 
 
-
-
     final double ejectTime = Constants.ejectTime;
     final double intakeTime = Constants.intakeTime;
     boolean currentlyFixing = false;
@@ -22,6 +20,7 @@ public class Intake {
 
     public void init()
     {
+
         ruby = new DoubleSolenoid(2,3);
         intakeMotorLeft = new VictorSP(7);
         intakeMotorRight = new VictorSP(8);

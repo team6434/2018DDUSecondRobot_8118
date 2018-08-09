@@ -1,17 +1,21 @@
-package frc.team6434.robot;
+package frc.team8118.robot;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class Lift implements Subsystem{
 
     VictorSP liftMotor;
     DigitalInput limitSwitch;
+    DoubleSolenoid mike;
 
     public void init()
     {
+        mike = new DoubleSolenoid(0,1);
         liftMotor = new VictorSP(4);
+
 //        limitSwitch = new DigitalInput(4);
     }
 
@@ -24,6 +28,8 @@ public class Lift implements Subsystem{
     {
 //        setMotorSpeed(0.8);
         setMotorSpeed(0.7);
+        mike.set(DoubleSolenoid.Value.kReverse);
+
     }
 
     public void moveUpAuto()
@@ -33,7 +39,9 @@ public class Lift implements Subsystem{
 
     public void moveDown()
     {
+        mike.set(DoubleSolenoid.Value.kForward);
         setMotorSpeed(-0.3);
+
     }
 
     //Stop lift at current position

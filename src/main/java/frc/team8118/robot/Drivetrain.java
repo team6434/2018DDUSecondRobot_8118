@@ -1,4 +1,4 @@
-package frc.team6434.robot;
+package frc.team8118.robot;
 
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.Encoder;
@@ -27,8 +27,8 @@ public class Drivetrain implements Subsystem {
 
     //sets the speeds of all driving motors
     public void drive(double leftSpeed, double rightSpeed) {
-        left.set(-leftSpeed);
-        right.set(rightSpeed);
+        left.set(leftSpeed);
+        right.set(-rightSpeed);
     }
 
     //teleop driving
@@ -45,7 +45,7 @@ public class Drivetrain implements Subsystem {
         if (right > 1) {
             right = 1;
         }
-        drive(-left/1.35, -right/1.35);
+        drive(-left/1.8, -right/1.8);
 
     }
 

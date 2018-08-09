@@ -1,4 +1,4 @@
-package frc.team6434.robot;
+package frc.team8118.robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -35,7 +35,7 @@ public class Strategy implements Subsystem {
     {
 //        SmartDashboard.putString("Strategy", "Test");
         return new Step[]{
-                new Straight(400, straightSpeed),
+                new Straight(1, straightSpeed),
                 new Eject()
         };
     }
@@ -46,12 +46,12 @@ public class Strategy implements Subsystem {
     public Step[] Left()
     {
         return new Step[]{
-                new Straight(1, straightSpeed),
-                new Turn(-90, turnSpeed),
-                new Straight(1, straightSpeed),
-                new Turn(0, turnSpeed),
-                new Straight(1, straightSpeed),
-                new Eject()
+                new Straight(4, straightSpeed),
+//                new Turn(-90, turnSpeed),
+//                new Straight(2, straightSpeed),
+//                new Turn(0, turnSpeed),
+//                new Straight(2, straightSpeed),
+//                new Eject()
         };
     }
 
@@ -59,8 +59,9 @@ public class Strategy implements Subsystem {
     public Step[] Right()
     {
         return new Step[]{
-                new Straight(1, 0.7),
+                new Straight(4, 0.7),
                 new Eject()
+                //use to be 4
         };
     }
 
@@ -69,7 +70,7 @@ public class Strategy implements Subsystem {
     public Step[] baseLine()
     {
         return new Step[]{
-                new Straight(1, straightSpeed)
+                new Straight(6, straightSpeed)
         };
     }
 

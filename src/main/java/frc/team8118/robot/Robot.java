@@ -1,4 +1,4 @@
-package frc.team6434.robot;
+package frc.team8118.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
@@ -124,14 +124,22 @@ public class Robot extends IterativeRobot {
         }
         else if (controller.getAButton())
         {
-//            t2.start();
+            t2.start();
             lift.moveDown();
-//            if (t2.get() >= 3)
-//            {
+            intake.ejectCubeFast();
+//            intake.getCube();
+            while (t2.get() < 0.25)
+            {
+                if(t2.get() > 0.20) {
 //                lift.liftStop();
-//                t2.stop();
+//                intake.ejectCubeFast();
+                    intake.getCube();
+                    t2.stop();
+                    t2.reset();
+                    break;
+                }
 //                t1.reset();
-//            }
+            }
         }
         else
         {
